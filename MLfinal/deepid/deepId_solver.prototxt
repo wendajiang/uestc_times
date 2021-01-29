@@ -1,0 +1,18 @@
+net: "deepId_train_test.prototxt"
+# conver the whole test set. 484 * 128 = 62006 images.
+test_iter: 484
+# Each 6805 is one epoch, test after each epoch
+test_interval: 6805
+base_lr: 0.01
+momentum: 0.9
+weight_decay: 0.005
+lr_policy: "step"
+# every 30 epochs, decrease the learning rate by factor 10.
+stepsize: 204164
+gamma: 0.1
+# power: 0.75
+display: 200
+max_iter: 816659 # 120 epochs.
+snapshot: 10000
+snapshot_prefix: “trained_model/deepId"
+solver_mode: GPU
